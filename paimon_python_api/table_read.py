@@ -42,6 +42,10 @@ class TableRead(ABC):
         """Read data from splits and converted to pandas.DataFrame format."""
 
     @abstractmethod
+    def to_polars(self, splits: List[Split]) -> pd.DataFrame:
+        """Read data from splits and converted to polars.DataFrame format."""
+
+    @abstractmethod
     def to_duckdb(
             self,
             splits: List[Split],
